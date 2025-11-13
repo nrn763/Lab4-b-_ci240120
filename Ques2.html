@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Display</title>
+</head>
+<body>
+    <h1>Book Details</h1>
+    <p>Check the console (Inspect > Console) for the required book details.</p>
+
+    <script>
+      
+        const bookCollection = {
+            "Books": [
+                {
+                    "title": "The Great Gatsby",
+                    "author": "F. Scott Fitzgerald",
+                    "publicationYear": 1925,
+                    "genres": ["Fiction", "Classics"]
+                },
+                {
+                    "title": "To Kill a Mockingbird",
+                    "author": "Harper Lee",
+                    "publicationYear": 1960,
+                    "genres": ["Fiction", "Coming-of-Age"]
+                }
+            ]
+        };
+
+        const books = bookCollection.Books;
+
+        var firstBookTitle = books[0].title;
+        console.log("1. Title of the first book: " + firstBookTitle);
+
+        var secondBookAuthor = books[1].author;
+        console.log("2. Author of the second book: " + secondBookAuthor);
+
+        console.log("3. Genres of all books:");
+        
+        books.forEach(function(book) {
+        
+            var genresList = book.genres.join(', ');
+            console.log(`   - ${book.title}: ${genresList}`);
+        });
+
+    </script>
+</body>
+</html>
